@@ -1,31 +1,34 @@
-import { useState , useContext } from "react";
-import { GlobalContext } from './utils/GlobalContext'
+import { useState, useContext, useEffect } from "react";
+import { GlobalContext } from "./utils/GlobalContext";
 
-const Card = ({ name, username, id }) => {
+const Card = () => {
+  const { value } = useContext(GlobalContext);
+  const [favoritos, setFavoritos] = useState([]);
+  const [datos, setDatos] = useState([]);
 
-  
-  const {value} = useContext(GlobalContext)
-  console.log(value.initialState)
+  useEffect(() => {
+    if (value.initialState.data) {
+      setDatos(value.initialState.data);
+    }
+  }, [value]);
 
-  const [data, setData] = useState(value.initialState.data);
-
-  const addFav = (newItem)=>{
-    setData((prevData) => [...prevData, newItem]);
-    localStorage.setItem('favoritos', data);
-  }
+  const addFav = (newItem) => {
+    if (!favoritos.some((item) => item.id === newItem.id)) {
+      setFavoritos((prevData) => [...prevData, newItem]);
+      localStorage.setItem("favoritos", JSON.stringify(favoritos));
+    }
+  };
 
   return (
     <div className="card">
-      
-        {/* En cada card deberan mostrar en name - username y el id */}
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        
-        <h1>name</h1>
-        <p>username</p>
-        <button onClick={addFav} className="favButton">Add fav</button>
+      {datos.map((item) => (
+        <div key={item.id} className="card">
+          <h2>{item.name}</h2>
+          <p>{item.username}</p>
+          <button onClick={() => addFav(item)}>Add fav</button>
+        </div>
+      ))}
     </div>
   );
 };
-
 export default Card;
