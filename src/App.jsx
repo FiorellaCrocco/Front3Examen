@@ -1,16 +1,31 @@
-import { ContextProvider } from "./components/utils/GlobalContext";
-import Footer from "./components/Footer";
+
+import { BrowserRouter, Routes, Route, useRoutes} from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import Card from "./components/Card";
+import Footer from "./components/Footer";
+
+import Home from './routes/Home';
+import Contact from './routes/Contact';
+import Detail from './routes/Detail';
+import Fav from './routes/Fav';
 
 function App() {
-  return (
-    <ContextProvider>
-      <Navbar />
-      <Card />
+
+  return(
+    <div>
+      <BrowserRouter basename="/">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/favs" element={<Fav />} />
+          <Route path="/dentist/:id" element={<Detail />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
-    </ContextProvider>
-  );
+    </div>
+  ) 
 }
 
 export default App;

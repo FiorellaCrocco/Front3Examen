@@ -1,11 +1,15 @@
-import React from 'react'
-import Card from '../Components/Card'
+import React, {useContext} from 'react';
+import Card from '../components/Card'
+import { GlobalContext } from "../components/utils/GlobalContext";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
+
+  const { value } = useContext(GlobalContext);
+
   return (
-    <main className="" >
+    <main className={value.state.theme === 'light' ? '' : 'dark'} >
       <h1>Home</h1>
       <div className='card-grid'>
         <Card />
@@ -14,4 +18,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

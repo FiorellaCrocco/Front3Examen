@@ -22,7 +22,7 @@ const Form = ({ mostrarDatos }) => {
   return (
     <div>
       <form onSubmit={handlerSubmit}  className='form'>
-        <h2>Ingrsa tus datos y nos contactaremos a la brevedad</h2>
+        <h2>Ingresa tus datos y nos contactaremos a la brevedad</h2>
         <label>
           <p>Ingrese su nombre completo:</p>
           <input

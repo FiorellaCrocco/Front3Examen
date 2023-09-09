@@ -26,17 +26,10 @@ const Navbar = () => {
 */
 
   return (
-    <nav>
-      {/*       
-      <Link>Dentist</Link>
-      <Link>Contact</Link>
-      <Link>Favorites</Link> 
-      */}
-
-      <p>Dentist</p>
-      <p>Contact</p>
-      <p>Favorites</p>
-
+    <nav>      
+      <Link to='/home'>Dentistas</Link>
+      <Link to='/contact'>Contacto</Link>
+      <Link to='/favoritos'>Favoritos</Link> 
       <button onClick={changeTheme}>Change theme</button>
     </nav>
   );
