@@ -1,27 +1,22 @@
-import { useState, useContext, useEffect } from "react";
+import {  useContext } from "react";
 import { GlobalContext } from "./utils/GlobalContext";
 
 const Card = () => {
-  const { value } = useContext(GlobalContext);
-  const [favoritos, setFavoritos] = useState([]);
-  const [datos, setDatos] = useState([]);
 
-  useEffect(() => {
-    if (value.state.data) {
-      setDatos(value.state.data);
-    }
-  }, [value]);
+  const { value } = useContext(GlobalContext);
 
   const addFav = (newItem) => {
+    const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    const newFav = [...favoritos, newItem];
+
     if (!favoritos.some((item) => item.id === newItem.id)) {
-      setFavoritos((prevData) => [...prevData, newItem]);
-      localStorage.setItem("favoritos", JSON.stringify(favoritos));
+      localStorage.setItem("favoritos", JSON.stringify(newFav));
     }
-  };
+  }
 
   return (
     <div className="card">
-      {datos.map((item) => (
+      {value.state.data.map((item) => (
         <div key={item.id} className="card">
           <h2>{item.name}</h2>
           <p>{item.username}</p>
@@ -31,4 +26,5 @@ const Card = () => {
     </div>
   );
 };
+
 export default Card;

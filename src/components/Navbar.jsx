@@ -5,21 +5,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
-//  const { value } = useContext(GlobalContext);
- // console.log(value.initialState);
-  
-  // Reducer para manejar el estado del tema
-/*  const themeReducer = (state, action) => {
-  switch (action.type) {
-    case "TOGGLE_THEME":
-      return state === "light" ? "dark" : "light";
-    default:
-      return state;
-  }
-};*/
-  // Definir el estado inicial del tema
- // const initialTheme = value.initialState.theme || "light";
-
    const { value } = useContext(GlobalContext);
 
    console.log(value.state);
@@ -34,10 +19,6 @@ const Navbar = () => {
     localStorage.setItem("theme", value.state.theme);
   }, [value.state.theme]);
   
- // console.log(value.state);
-  // Definir el reducer para manejar el estado del tema
- // const [theme, dispatch] = useReducer(themeReducer, initialTheme);
-
 /*
   useEffect(() => {
      document.body.classList.toggle("dark-mode", state.theme === "dark");

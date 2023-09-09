@@ -28,24 +28,17 @@ export const ContextProvider = ({ children }) => {
   // Utiliza el hook useReducer para gestionar el estado y las acciones
   const [state, dispatch] = useReducer(reducer, initialState);
 
-//  const [rest, setRest] = useState('')
-
   async function handleFetch() {
     const response = await fetch('https://jsonplaceholder.typicode.com/users/');
     const data = await response.json();
-    //setRest(data);
     dispatch({ type: "FETCH", payload: data });
-    //console.log(response);
   }
   
   // Usa el hook useEffect para fetchear los datos una vez que el componente se monta
   useEffect(() => {
     handleFetch()
   }, [])
-  
-  //const updatedInitialState = { ...initialState, data: rest };
 
-  
   const themes = {
     light: {
       font: 'black',
@@ -57,17 +50,8 @@ export const ContextProvider = ({ children }) => {
     }
   };
   
-  const theme = localStorage.getItem("theme") || initialState.theme;
- // console.log("Theme:", theme);
-
- /* const value = {
-    theme,
-    initialState: updatedInitialState,
-  };*/
-
   const value = { state, dispatch }
   console.log(state);
- // console.log(updatedInitialState);
 
   return (
     <GlobalContext.Provider value={{value}}>
