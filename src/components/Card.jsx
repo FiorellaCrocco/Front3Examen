@@ -7,8 +7,8 @@ const Card = () => {
   const [datos, setDatos] = useState([]);
 
   useEffect(() => {
-    if (value.initialState.data) {
-      setDatos(value.initialState.data);
+    if (value.state.data) {
+      setDatos(value.state.data);
     }
   }, [value]);
 
