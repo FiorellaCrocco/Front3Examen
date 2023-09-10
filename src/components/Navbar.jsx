@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav>      
       <Link to='/home'>Dentistas</Link>
       <Link to='/contact'>Contacto</Link>
-      <Link to='/favoritos'>Favoritos</Link> 
+      <Link to='/favs'>Favoritos</Link> 
       <button onClick={changeTheme}>Change theme</button>
     </nav>
   );

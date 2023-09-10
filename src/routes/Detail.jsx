@@ -8,20 +8,22 @@ const Detail = () => {
  
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
 
-//  const {value} = useContest(GlobalContext);
+  //  const {value} = useContest(GlobalContext);
 
-  const datos = JSON.parse(localStorage.getItem('data'))
+  const datos = JSON.parse(localStorage.getItem('item'))
   console.log(typeof datos);
   console.log(datos);
 
   const { id } = useParams();
-  const item = datos.find((dato) => dato.id.toString() === id);
+  //const item = datos.find((dato) => dato.id.toString() === id);
+  const item = datos
 
   console.log(typeof item);
 
   return (
     <>
       <div className="card" >
+        <h1>hola</h1>
         <p>{item.name}</p>
         <p>{item.email}</p>
         <p>{item.phone}</p>
