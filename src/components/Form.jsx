@@ -47,7 +47,7 @@ const Form = () => {
         </label>
         <button type="submit" className="btn">Enviar</button>
       </form>
-        {msgError ? <p id="error">{msgError}</p> : <p>{msgSucess}</p>}
+        {msgError ? <p id="error">{msgError}</p> : <p id="msgSucess">{msgSucess}</p>}
     </div>
   );
 };

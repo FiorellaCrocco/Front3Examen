@@ -1,3 +1,14 @@
+a {
+  color: #000;
+  cursor: pointer;
+  margin: 5px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(136, 136, 136);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -7,105 +18,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.favButton {
-  background-color: rgb(116, 220, 204);
-  padding: 1rem 0rem;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-  border: 0.5px solid rgb(136, 136, 136);
-}
-
 .button-container {
-  border: solid 0.1rem rgb(116, 220, 204);
-  padding: 0.5rem;
-  cursor: pointer;
   background-color: transparent;
+  border: solid 0.1rem rgb(116, 220, 204);
   border-radius: 0.75rem;
-}
-
-main {
-  height: auto;
-  padding-bottom: 3rem;
-}
-
-h1 {
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 1rem;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-  margin: 5px;
   cursor: pointer;
-}
-
-a:hover {
-  color: rgb(136, 136, 136);
-}
-
-footer {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-top: 5px;
   padding: 0.5rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-}
-
-footer > img {
-  width: 200px;
-  margin: 0;
-}
-
-footer > p {
-  margin: 0;
-  padding-top: 0.7rem;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  width: auto;
-  padding: 10rem;
-}
-
-form>button{
-  margin-top: 1rem;
-  padding: 0.2rem;
-}
-
-input{
-  width: 40rem;
-
 }
 
 .card {
+  align-items: center;
+  border: 1px solid rgb(116, 220, 204);
   cursor: pointer;
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
-  align-items: center;
-  width: 15vw;
+  justify-content: space-around;
   padding: 0 0.5rem;
-  border: 1px solid rgb(116, 220, 204);
+  width: 15vw;
 }
 
 .card:hover {
@@ -114,40 +43,123 @@ input{
 
 .card-grid {
   display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
-  width: 90vw;
-  height: 100vh;
   flex-wrap: wrap;
+  gap: 1rem;
+  height: 100vh;
+  justify-content: space-evenly;
   margin: 0 auto;
-  padding-bottom: 5rem;
   margin-bottom: 7rem;
+  padding-bottom: 5rem;
+  width: 90vw;
 }
 
 .card-detail {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  height: 30vh;
-  width: 50vw;
   border: 1px solid rgb(116, 220, 204);
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 30vh;
   margin-top: 10rem;
+  width: 50vw;
 }
 
 .card-img {
+  margin-top: 0.7rem;
   height: auto;
   width: 15vw;
-  margin-top: 0.7rem;
 }
 
 .card-detail-img {
-  height: auto;
-  width: 13vw;
-  margin: 0.7rem 0;
-  justify-content: flex-start;
   align-items: center;
+  margin: 0.7rem 0;
+  height: auto;
+  justify-content: flex-start;
+  width: 13vw;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.dark {
+  background-color: #12121296;
+  color: white;
+}
+
+.dark > a {
+  color: white;
+}
+
+.favButton {
+  background-color: rgb(116, 220, 204);
+  border: none;
+  border: 0.5px solid rgb(136, 136, 136);
+  cursor: pointer;
+  padding: 1rem 0rem;
+  width: 100%;
+}
+
+footer {
+  background-color: white;
+  bottom: 0;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 0.5rem;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+footer > img {
+  margin: 0;
+  width: 200px;
+}
+
+footer > p {
+  margin: 0;
+  padding-top: 0.7rem;
+}
+
+form {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10rem 10rem 2rem 10rem;
+  width: auto;
+}
+
+form>button{
+  margin-top: 1rem;
+  padding: 0.2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+input{
+  width: 40rem;
+}
+
+main {
+  height: auto;
+  padding-bottom: 3rem;
+}
+
+#error, #msgSucess{
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
 }
 
 .text-align {
@@ -158,9 +170,9 @@ input{
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
-  display: table;
   border: 1px solid #ccc;
+  display: table;
+  width: 100%;
 }
 
 td,
@@ -172,13 +184,4 @@ th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
-}
-
-.dark {
-  background-color: #12121296;
-  color: white;
-}
-
-.dark > a {
-  color: white;
 }

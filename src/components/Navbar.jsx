@@ -1,7 +1,6 @@
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "./utils/GlobalContext";
 import { Link } from "react-router-dom";
-//import "../styles/Navbar.css";
 
 const Navbar = () => {
 
@@ -9,7 +8,6 @@ const Navbar = () => {
 
    //console.log(value.theme);
 
-  // Función para cambiar el tema
   const changeTheme = () => {
     value.dispatch({ type: "TOGGLE_THEME" });
   };
