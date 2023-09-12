@@ -31,6 +31,7 @@ code {
 
 main {
   height: auto;
+  padding-bottom: 3rem;
 }
 
 h1 {
@@ -81,11 +82,19 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   width: auto;
-  height: 25vh;
-  padding-top: 12.5rem;
-  font-size: largers;
+  padding: 10rem;
+}
+
+form>button{
+  margin-top: 1rem;
+  padding: 0.2rem;
+}
+
+input{
+  width: 40rem;
+
 }
 
 .card {
