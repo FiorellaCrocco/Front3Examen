@@ -29,7 +29,7 @@ code {
   border-radius: 0.75rem;
 }
 
-main{
+main {
   height: auto;
 }
 
@@ -67,12 +67,12 @@ footer {
   height: 40px;
 }
 
-footer>img {
+footer > img {
   width: 200px;
   margin: 0;
 }
 
-footer>p {
+footer > p {
   margin: 0;
   padding-top: 0.7rem;
 }
@@ -85,7 +85,7 @@ form {
   width: auto;
   height: 25vh;
   padding-top: 12.5rem;
-font-size: largers;
+  font-size: largers;
 }
 
 .card {
@@ -118,30 +118,30 @@ font-size: largers;
 .card-detail {
   display: flex;
   justify-content: space-evenly;
-  flex-direction: column;
-height: 30vh;
+  flex-direction: row;
+  height: 30vh;
   width: 50vw;
   border: 1px solid rgb(116, 220, 204);
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-margin-top: 10rem;
+  margin-top: 10rem;
 }
 
-.card-img{
+.card-img {
   height: auto;
-  width: 14vw;
+  width: 15vw;
   margin-top: 0.7rem;
 }
 
-.card-detail-img{
+.card-detail-img {
   height: auto;
-  width: 20vw;
-  margin-top: 0.7rem;
+  width: 13vw;
+  margin: 0.7rem 0;
   justify-content: flex-start;
   align-items: center;
 }
 
-.text-align{
+.text-align {
   text-align: left;
   margin-left: 1rem;
 }
@@ -170,6 +170,6 @@ tr:nth-child(even) {
   color: white;
 }
 
-.dark>a {
+.dark > a {
   color: white;
 }

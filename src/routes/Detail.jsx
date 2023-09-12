@@ -22,8 +22,8 @@ const Detail = () => {
     <main className={value.theme === "light" ? "" : "dark"}>
       <div className="card-grid">
         <div className="card-detail">
+        <img src="/images/doctor.jpg" className="card-detail-img"/>
           <div className="text-align">
-        <img src="./images/doctor.jpg" className="card-detail-img"/>
           <h2>{datos.name}</h2>
           <p>{datos.email}</p>
           <p>{datos.phone}</p>
