@@ -1,15 +1,22 @@
-import React, {useContext} from 'react';
-import Card from "../components/Card";
+import React, { useContext } from "react";
 import { GlobalContext } from "../components/utils/GlobalContext";
-
 
 const Fav = () => {
   const { value } = useContext(GlobalContext);
+
+  const datos = JSON.parse(localStorage.getItem("favoritos"));
+
   return (
-    <main className={value.theme === 'light' ? '' : 'dark'}  >
+    <main className={value.theme === "light" ? "" : "dark"}>
       <div className="card-grid">
-        {/* este componente debe consumir los destacados del localStorage */}
-        {/* Deberan renderizar una Card por cada uno de ellos */}
+        {datos.map((item) => (
+          <div key={item.id}>
+            <div className="card">
+              <h2>{item.name}</h2>
+              <p>{item.username}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );

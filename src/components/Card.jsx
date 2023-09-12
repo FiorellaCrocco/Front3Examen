@@ -19,7 +19,7 @@ const Card = ({ datos }) => {
   //  console.log(datos);
 
   return (
-    <div className="card">
+    <div className="card-grid">
       {datos.map((item) => (
         <div key={item.id} >
           <div className="card" onClick={() => handleClick(item)}>
