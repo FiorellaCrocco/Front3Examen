@@ -7,7 +7,7 @@ import { GlobalContext } from "../components/utils/GlobalContext";
 const Contact = () => {
   const { value } = useContext(GlobalContext);
   return (
-    <main className={value.state.theme === 'light' ? '' : 'dark'} >
+    <main className={value.theme === 'light' ? '' : 'dark'} >
       <div className='card-grid'>
       <Form/>
       </div>

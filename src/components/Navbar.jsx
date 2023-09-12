@@ -7,7 +7,7 @@ const Navbar = () => {
 
    const { value } = useContext(GlobalContext);
 
-   console.log(value.state);
+   console.log(value.theme);
 
   // Función para cambiar el tema
   const changeTheme = () => {
@@ -16,8 +16,8 @@ const Navbar = () => {
 
   // useEffect para guardar el tema en el almacenamiento local
   useEffect(() => {
-    localStorage.setItem("theme", value.state.theme);
-  }, [value.state.theme]);
+    localStorage.setItem("theme", value.theme);
+  }, [value.theme]);
   
 /*
   useEffect(() => {

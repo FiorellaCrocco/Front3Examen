@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "./utils/GlobalContext";
-import { useNavigate  } from "react-router-dom";
 
-const Card = () => {
-  const { value } = useContext(GlobalContext);
-  const navigate = useNavigate();
+const Card = ({ datos }) => {
+  //const { value } = useContext(GlobalContext);
 
   const addFav = (newItem) => {
     const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
@@ -15,22 +13,19 @@ const Card = () => {
     }
   };
 
-  const handleClick = (item) => {
-    // Redirige al usuario a la página de detalle con el ID correspondiente
-    console.log(item.id);
-    localStorage.setItem("item", JSON.stringify(item)); 
-    navigate(`/dentist/${item.id}`);
-  };
+  console.log(datos);
 
   return (
     <div className="card">
-      {value.state.data.map((item) => (
-        <div>
-        <div key={item.id} className="card" onClick={() => handleClick(item) }>
-          <h2>{item.name}</h2>
-          <p>{item.username}</p>
+      {datos.map((item) => (
+        <div key={item.id}>
+          <div className="card">
+            <h2>{item.name}</h2>
+            <p>{item.username}</p>
           </div>
-          <button className="favButton" onClick={() => addFav(item)}>Add fav</button>
+          <button className="favButton" onClick={() => addFav(item)}>
+            Add fav
+          </button>
         </div>
       ))}
     </div>
@@ -38,4 +33,3 @@ const Card = () => {
 };
 
 export default Card;
-

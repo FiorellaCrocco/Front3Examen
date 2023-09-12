@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
- 
+  const { value } = useContext(GlobalContext);
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
 
   //  const {value} = useContest(GlobalContext);
@@ -21,7 +21,7 @@ const Detail = () => {
   console.log(typeof item);
 
   return (
-    <>
+    <main className={value.theme === 'light' ? '' : 'dark'}  >
       <div className="card" >
         <h1>hola</h1>
         <p>{item.name}</p>
@@ -29,7 +29,7 @@ const Detail = () => {
         <p>{item.phone}</p>
         <p>{item.website}</p>
       </div>
-    </>
+    </main>
   )
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Form = ({ mostrarDatos }) => {
+const Form = () => {
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [msgError, setMsgError] = useState("");
@@ -14,7 +14,7 @@ const Form = ({ mostrarDatos }) => {
         setMsgError("Por favor verifique su información nuevamente");
         return;
     } else {
-        mostrarDatos(nombre, email), setNombre(""), setEmail(""), setMsgError(""), setMsSucess(`Gracias ${nombre}, te contactaremos cuanto antes vía mail`)
+        setNombre(""), setEmail(""), setMsgError(""), setMsSucess(`Gracias ${nombre}, te contactaremos cuanto antes vía mail`)
         
     }
   }

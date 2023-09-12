@@ -1,27 +1,31 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Card from '../components/Card'
 import { GlobalContext } from "../components/utils/GlobalContext";
-//import { Link } from "react-router-dom";
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
 
   const { value } = useContext(GlobalContext);
-/*
-  const [dato, setDato] = useState({})
+
+  const [datos, setDatos] = useState([])
+
+  async function handleFetch() {
+    const response = await (
+      await fetch('https://jsonplaceholder.typicode.com/users/')
+    ).json()
+    setDatos(response)
+  }
 
   useEffect(() => {
-    setDato(JSON.parse(localStorage.getItem('item')));
-    console.log(dato);
+    handleFetch()
   }, [])
-*/
+
+  console.log(datos);
+
   return (
-    <main className={value.state.theme === 'light' ? '' : 'dark'} >
+    <main className={value.theme === 'light' ? '' : 'dark'}  >
       <h1>Home</h1>
       <div className='card-grid'>
-        <Card>
-         {/* <Link to={`dentist/`} /> */}
-        </Card>
+        <Card datos={datos}/>
       </div>
     </main>
   )
