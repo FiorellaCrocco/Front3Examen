@@ -23,7 +23,8 @@ const Card = ({ datos }) => {
       {datos.map((item) => (
         <div key={item.id} >
           <div className="card" onClick={() => handleClick(item)}>
-            <h2>{item.name}</h2>
+          <img src="./public/images/doctor.jpg" className="card-img"/>
+            <h3>{item.name}</h3>
             <p>{item.username}</p>
           </div>
           <button className="favButton" onClick={() => addFav(item)}>

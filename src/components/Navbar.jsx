@@ -14,23 +14,25 @@ const Navbar = () => {
     value.dispatch({ type: "TOGGLE_THEME" });
   };
 
-  // useEffect para guardar el tema en el almacenamiento local
   useEffect(() => {
     localStorage.setItem("theme", value.theme);
   }, [value.theme]);
   
-/*
-  useEffect(() => {
-     document.body.classList.toggle("dark-mode", state.theme === "dark");
-   }, [state.theme]);
-*/
 
   return (
-    <nav>      
+    <nav className="nav">      
       <Link to='/home'>Dentistas</Link>
       <Link to='/contact'>Contacto</Link>
       <Link to='/favs'>Favoritos</Link> 
-      <button onClick={changeTheme}>Change theme</button>
+      <button onClick={changeTheme} className="button-container">{value.theme === "dark" ? (
+    <span role="img" aria-label="light" className="sun-icon">
+      ☀️
+    </span>
+  ) : (
+    <span role="img" aria-label="dark" className="moon-icon">
+      🌙
+    </span>
+  )}</button>
     </nav>
   );
 };

@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 
 // Define el estado inicial
-export const initialState = "light";
+export const initialState = localStorage.getItem('theme') || "light";
 
 // Crea un contexto global
 export const GlobalContext = createContext({});

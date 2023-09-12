@@ -1,33 +1,38 @@
-import React, {useContext, useState, useEffect} from 'react';
-import { GlobalContext } from '../components/utils/GlobalContext';
-import { useParams } from 'react-router-dom';
+import React, { useContext, useState, useEffect } from "react";
+import { GlobalContext } from "../components/utils/GlobalContext";
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
   const { value } = useContext(GlobalContext);
   const { id } = useParams();
-  const [datos, setDatos] = useState([])
+  const [datos, setDatos] = useState([]);
 
   async function handleFetch() {
     const response = await (
       await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-    ).json()
-    setDatos(response)
+    ).json();
+    setDatos(response);
   }
 
   useEffect(() => {
-    handleFetch()
-  }, [])
+    handleFetch();
+  }, []);
 
   return (
-    <main className={value.theme === 'light' ? '' : 'dark'}  >
-      <div className="card" >
-        <p>{datos.name}</p>
-        <p>{datos.email}</p>
-        <p>{datos.phone}</p>
-        <p>{datos.website}</p>
+    <main className={value.theme === "light" ? "" : "dark"}>
+      <div className="card-grid">
+        <div className="card-detail">
+          <div className="text-align">
+        <img src="./images/doctor.jpg" className="card-detail-img"/>
+          <h2>{datos.name}</h2>
+          <p>{datos.email}</p>
+          <p>{datos.phone}</p>
+          <p>{datos.website}</p>
+          </div>
+        </div>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Detail
+export default Detail;
