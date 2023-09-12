@@ -19,7 +19,7 @@ const Home = () => {
     handleFetch()
   }, [])
 
-  console.log(datos);
+ // console.log(datos);
 
   return (
     <main className={value.theme === 'light' ? '' : 'dark'}  >

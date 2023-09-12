@@ -18,7 +18,7 @@ const themeReducer = (state, action) => {
 export const ContextProvider = ({ children }) => {
   const [theme, dispatch] = useReducer(themeReducer, initialState);
   const value = { theme, dispatch };
-  console.log(theme);
+ // console.log(theme);
 
   return (
     <GlobalContext.Provider value={{ value }}>

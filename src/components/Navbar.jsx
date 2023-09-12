@@ -7,7 +7,7 @@ const Navbar = () => {
 
    const { value } = useContext(GlobalContext);
 
-   console.log(value.theme);
+   //console.log(value.theme);
 
   // Función para cambiar el tema
   const changeTheme = () => {

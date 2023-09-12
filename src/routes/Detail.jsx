@@ -1,33 +1,30 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import { GlobalContext } from '../components/utils/GlobalContext';
 import { useParams } from 'react-router-dom';
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Detail = () => {
   const { value } = useContext(GlobalContext);
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
-
-  //  const {value} = useContest(GlobalContext);
-
-  const datos = JSON.parse(localStorage.getItem('item'))
-  console.log(typeof datos);
-  console.log(datos);
-
   const { id } = useParams();
-  //const item = datos.find((dato) => dato.id.toString() === id);
-  const item = datos
+  const [datos, setDatos] = useState([])
 
-  console.log(typeof item);
+  async function handleFetch() {
+    const response = await (
+      await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+    ).json()
+    setDatos(response)
+  }
+
+  useEffect(() => {
+    handleFetch()
+  }, [])
 
   return (
     <main className={value.theme === 'light' ? '' : 'dark'}  >
       <div className="card" >
-        <h1>hola</h1>
-        <p>{item.name}</p>
-        <p>{item.email}</p>
-        <p>{item.phone}</p>
-        <p>{item.website}</p>
+        <p>{datos.name}</p>
+        <p>{datos.email}</p>
+        <p>{datos.phone}</p>
+        <p>{datos.website}</p>
       </div>
     </main>
   )

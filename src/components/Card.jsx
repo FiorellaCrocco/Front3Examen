@@ -13,7 +13,7 @@ const Card = ({ datos }) => {
     }
   };
 
-  console.log(datos);
+//  console.log(datos);
 
   return (
     <div className="card">
