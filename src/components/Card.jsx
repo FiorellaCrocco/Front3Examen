@@ -28,7 +28,7 @@ const Card = ({ datos }) => {
             <p>{item.username}</p>
           </div>
           <button className="favButton" onClick={() => addFav(item)}>
-            Add fav
+            Añadir a favoritos
           </button>
         </div>
       ))}

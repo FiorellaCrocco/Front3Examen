@@ -4,10 +4,11 @@ import { GlobalContext } from "../components/utils/GlobalContext";
 const Fav = () => {
   const { value } = useContext(GlobalContext);
 
-  const datos = JSON.parse(localStorage.getItem("favoritos"));
+  const datos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
   return (
     <main className={value.theme === "light" ? "" : "dark"}>
+      <h1>Mis favoritos</h1>
       <div className="card-grid">
         {datos.map((item) => (
           <div key={item.id}>
