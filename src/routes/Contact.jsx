@@ -7,6 +7,7 @@ const Contact = () => {
   const { value } = useContext(GlobalContext);
   return (
     <main className={value.theme === 'light' ? '' : 'dark'} >
+        <h1>Formulario de contacto</h1>
       <div className='card-grid'>
       <Form/>
       </div>

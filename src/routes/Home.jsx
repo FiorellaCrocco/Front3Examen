@@ -23,6 +23,7 @@ const Home = () => {
 
   return (
     <main className={value.theme === 'light' ? '' : 'dark'}  >
+        <h1>Dentistas disponibles</h1>
       <div className='card-grid'>
         <Card datos={datos}/>
       </div>
